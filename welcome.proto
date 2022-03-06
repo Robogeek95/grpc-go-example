@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "example.com/grpc-go/welcome";
+
+package welcome;
+
+// The greeting service definition.
+service WelcomeService {
+  // Sends a greeting
+  rpc SendWelcome (WelcomeRequest) returns (WelcomeResponse) {}
+}
+
+// The request message containing the user's name.
+message WelcomeRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message WelcomeResponse {
+  string message = 1;
+}
